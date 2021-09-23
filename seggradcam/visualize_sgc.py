@@ -83,7 +83,7 @@ class SegGradCAMplot(SegGradCAM):
         scatter_size = int(scatter_size / 3)
         plt.figure(figsize=(10 * scale_fig, 5 * scale_fig))
         # plt.axis('off')
-        plt.imshow(self.ximg, vmin=0, vmax=1, cmap=self.cmap_orig)
+        #plt.imshow(self.ximg, vmin=0, vmax=1, cmap=self.cmap_orig)
         # class contour
         X, Y = self.roi.meshgrid()
 
@@ -102,7 +102,7 @@ class SegGradCAMplot(SegGradCAM):
             plt.contour(X, Y, biasroi.biased_mask, colors='magenta')  # 'black') #'purple')
             if biasroi.biased_mask.any() != 0:
                 plt.title(title1bias, fontsize=fonts)
-        plt.imshow(self.cam, cmap='jet',  # vmin=0,vmax=1,
+        #plt.imshow(self.cam, cmap='jet',  # vmin=0,vmax=1,
                    alpha=0.6)
         jet = plt.colorbar(fraction=0.046, pad=0.04, ticks=[0, 0.2, 0.4, 0.6, 0.8, 1])
         jet.set_label(label="Importance", size=fonts)
