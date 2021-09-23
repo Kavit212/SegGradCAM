@@ -146,4 +146,6 @@ activation_19 (Activation)      (None, None, None, 8)     0                   co
 Total params: 5,506,184
 Trainable params: 5,501,256
 Non-trainable params: 4,928
+
+None
 __________________________________________________________________________________________________
