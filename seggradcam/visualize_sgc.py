@@ -83,7 +83,7 @@ class SegGradCAMplot(SegGradCAM):
         scatter_size = int(scatter_size / 3)
         plt.figure(figsize=(10 * scale_fig, 5 * scale_fig))
         # plt.axis('off')
-        #plt.imshow(self.ximg, vmin=0, vmax=1, cmap=self.cmap_orig)
+        plt.imshow(self.ximg, vmin=0, vmax=1, cmap=self.cmap_orig)
         # class contour
         X, Y = self.roi.meshgrid()
 
@@ -93,16 +93,16 @@ class SegGradCAMplot(SegGradCAM):
             roi_contour1 = classroi.roi
         else:
             roi_contour1 = self.roi.roi
-        plt.contour(X, Y, roi_contour1, colors='pink')
+        #plt.contour(X, Y, roi_contour1, colors='pink')
 
         plt.title(title1, fontsize=fonts)
         # biased texture contour
         if self.next_dict and self.image_id:
             biasroi = BiasRoI(self.next_dict, self.image_id)
-            plt.contour(X, Y, biasroi.biased_mask, colors='magenta')  # 'black') #'purple')
+            #plt.contour(X, Y, biasroi.biased_mask, colors='magenta')  # 'black') #'purple')
             if biasroi.biased_mask.any() != 0:
                 plt.title(title1bias, fontsize=fonts)
-        #plt.imshow(self.cam, cmap='jet',  # vmin=0,vmax=1,
+        plt.imshow(self.cam, cmap='jet',  # vmin=0,vmax=1,
                    alpha=0.6)
         jet = plt.colorbar(fraction=0.046, pad=0.04, ticks=[0, 0.2, 0.4, 0.6, 0.8, 1])
         jet.set_label(label="Importance", size=fonts)
@@ -153,7 +153,7 @@ class SegGradCAMplot(SegGradCAM):
         # biased texture contour
         if self.next_dict and self.image_id:
             biasroi = BiasRoI(self.next_dict, self.image_id)
-            plt.contour(X, Y, biasroi.biased_mask, colors='magenta')  # 'black') #'purple')
+            #plt.contour(X, Y, biasroi.biased_mask, colors='magenta')  # 'black') #'purple')
             # print(biasroi.biased_mask.any()==0, biasroi.biased_mask.all()==0)
             if biasroi.biased_mask.any() != 0:
                 plt.title('Input image & biased texture', fontsize=fonts)
@@ -169,7 +169,7 @@ class SegGradCAMplot(SegGradCAM):
             plt.scatter(j, i, color='white', s=scatter_size)
         else:
             # class contour
-            plt.contour(X, Y, self.roi.roi, colors='pink')
+            #plt.contour(X, Y, self.roi.roi, colors='pink')
 
         plt.title(title2, fontsize=fonts)
         plt.imshow(self.cam, cmap='jet',  # vmin=0,vmax=1,
