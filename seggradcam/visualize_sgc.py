@@ -90,9 +90,9 @@ class SegGradCAMplot(SegGradCAM):
         if pixel:
             # i, j = self.roi.i, self.roi.j
             classroi = ClassRoI(self.model, self.image, self.cls)
-            roi_contour1 = classroi.roi
+            #roi_contour1 = classroi.roi
         else:
-            roi_contour1 = self.roi.roi
+            #roi_contour1 = self.roi.roi
         #plt.contour(X, Y, roi_contour1, colors='pink')
 
         plt.title(title1, fontsize=fonts)
