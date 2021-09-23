@@ -116,7 +116,8 @@ class SegGradCAMplot(SegGradCAM):
 
     def explainClass(self):
         """Plot seg-grad-cam explanation for a selected class channel"""
-        title1 = 'Seg-Grad-CAM for class %d' % (self.cls)
+        #title1 = 'Seg-Grad-CAM for class %d' % (self.cls)
+        title1 = 'Seg-Grad-CAM' 
         title1bias = 'Seg-Grad-CAM for class %d \n& biased texture in magenta' % (self.cls)
         start_save_name = 'class'
         self.explainBase(title1, title1bias, start_save_name)
